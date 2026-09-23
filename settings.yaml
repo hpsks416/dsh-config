@@ -1,0 +1,29 @@
+llm-pi-ai:
+  providers:
+    commandcode:
+      displayName: Command Code
+      api: openai-completions
+      baseURL: https://api.commandcode.ai/provider/v1
+      apiKeyEnv: COMMANDCODE_API_KEY
+      models:
+        - id: deepseek/deepseek-v4-flash
+        - id: deepseek/deepseek-v4-pro
+        - id: deepseek/deepseek-v4.1-flash
+        - id: moonshotai/Kimi-K2.7-Code
+        - id: claude-sonnet-4-6
+    deepseek:
+      displayName: DeepSeek
+      api: openai-completions
+      baseURL: https://api.deepseek.com
+      apiKeyEnv: DEEPSEEK_API_KEY
+      models:
+        - id: deepseek-v4-pro
+        - id: deepseek-flash
+agent-default-model:
+  provider: deepseek-vision
+  model: deepseek-v4-pro
+  reasoningEffort: high
+ui-onboarding:
+  welcomeNoticeVersion: 2026-08-13.1
+ui-theme:
+  preference: dark
