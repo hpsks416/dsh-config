@@ -1,5 +1,8 @@
 # dsh-config
 
+> ⚠️ **本仓库已废弃**：内容已并入 [agent-deploy](https://github.com/hpsks416/agent-deploy) 的 `dsh-config/` 子目录，请以 agent-deploy 为准。本仓库保留仅供历史归档。
+
+
 DeepSeek Harness（DSH）本机架构与配置快照 —— 一键恢复「换机 / 迁移」所需的一切（除密钥）。
 
 ## 适用对象
@@ -40,3 +43,4 @@ DeepSeek Harness（DSH）本机架构与配置快照 —— 一键恢复「换�
 ## License
 
 MIT License. See [LICENSE](LICENSE).
+
