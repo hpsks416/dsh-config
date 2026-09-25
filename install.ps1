@@ -2,7 +2,7 @@
 # ============================================================================
 # DSH 本机架构一键恢复脚本（换机 / 迁移用）
 # 从 dsh-config 仓库恢复：全局指令、配置、web profile、dsh-skill-studio 修复版，
-# 并批量 clone 全部 22 个 skill 到 ~/.dsh/skills/。
+# 并批量 clone 全部 skill（21 个，已退役的 hatch-pet 除外）到 ~/.dsh/skills/。
 #
 # 用法（在 dsh-config 仓库根目录运行）：
 #   pwsh install.ps1                     # 恢复配置 + 全部 skill（默认 GitHub 源）
@@ -26,6 +26,7 @@ $dshHome = Join-Path $env:USERPROFILE '.dsh'
 $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $owner = 'hpsks416'
 
+# 注：hatch-pet 已退役（本地保留、未上云），不参与迁移，故不在此列表
 $skills = @(
   'acp-studio',
   'agent-workflow-orchestration',
@@ -33,7 +34,6 @@ $skills = @(
   'browser-viz-local-scripts',
   'dsh-plugin-lazy-adapter-resolution',
   'github-ready-packager',
-  'hatch-pet',
   'homophone-pun-analysis',
   'hpsks416',
   'long-sentence-structurizer',
@@ -124,7 +124,7 @@ if (-not $SkipConfig) {
 # ---- 2. 安装 skill -------------------------------------------------------
 if (-not $SkipSkills) {
   Write-Host ''
-  Write-Host '[2/3] 安装 22 个 skill' -ForegroundColor Yellow
+  Write-Host '[2/3] 安装 21 个 skill' -ForegroundColor Yellow
   $skillsDir = Join-Path $dshHome 'skills'
   New-Item -ItemType Directory -Force -Path $skillsDir | Out-Null
 
